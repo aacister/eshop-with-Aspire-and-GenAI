@@ -1,0 +1,12 @@
+.azure
+/.vs
+/AppHost/bin/Debug/net9.0
+/AppHost/obj
+/Catalog/bin/Debug/net9.0
+/Catalog/bin/Release/net9.0/linux-x64
+/Basket/bin
+/Catalog/obj
+/ServiceDefaults/bin
+/ServiceDefaults/obj
+/WebApp/bin
+/WebApp/obj
