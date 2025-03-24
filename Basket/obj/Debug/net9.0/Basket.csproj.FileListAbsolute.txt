@@ -78,3 +78,4 @@ C:\Users\aacis\source\repos\EShopAspire\eshop-aspire\Basket\bin\Debug\net9.0\Mic
 C:\Users\aacis\source\repos\EShopAspire\eshop-aspire\Basket\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\aacis\source\repos\EShopAspire\eshop-aspire\Basket\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\aacis\source\repos\EShopAspire\eshop-aspire\Basket\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\aacis\source\repos\EShopAspire\eshop-aspire\Basket\obj\Debug\net9.0\Basket.sourcelink.json

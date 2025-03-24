@@ -23,7 +23,7 @@ public class CatalogApiClient(HttpClient httpClient)
         return response!;
     }
 
-    /*
+    
     public async Task<List<Product>?> SearchProducts(string query, bool aiSearch)
     {
         if (aiSearch)
@@ -35,5 +35,5 @@ public class CatalogApiClient(HttpClient httpClient)
             return await httpClient.GetFromJsonAsync<List<Product>>($"/products/search/{query}");
         }
     }
-    */
+    
 }

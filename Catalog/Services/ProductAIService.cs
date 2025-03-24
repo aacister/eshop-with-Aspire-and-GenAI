@@ -1,10 +1,14 @@
 ﻿using Microsoft.Extensions.AI;
+using Microsoft.Extensions.VectorData;
 //using Microsoft.Extensions.VectorData;
 
 namespace Catalog.Services;
 
 public class ProductAIService(
-    IChatClient chatClient
+    ProductDbContext dbContext,
+    IChatClient chatClient,
+    IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator,
+    IVectorStoreRecordCollection<int, ProductVector> productVectorCollection
     )
 {
     public async Task<string> SupportAsync(string query)
@@ -26,9 +30,9 @@ public class ProductAIService(
         };
 
         var resultPrompt = await chatClient.GetResponseAsync(chatHistory);
-        return resultPrompt.Message.Contents[0].ToString()!;
+        return resultPrompt.Messages[0].ToString()!;
     }
-    /*
+
     public async Task<IEnumerable<Product>> SearchProductsAsync(string query)
     {
         if (!await productVectorCollection.CollectionExistsAsync())
@@ -38,16 +42,16 @@ public class ProductAIService(
 
         var queryEmbedding = await embeddingGenerator.GenerateEmbeddingVectorAsync(query);
 
-        var vectorSearchOptions = new VectorSearchOptions
+        var vectorSearchOptions = new VectorSearchOptions<ProductVector>
         {
             Top = 1,
-            VectorPropertyName = "Vector"
+            VectorProperty = pv => pv.Vector
         };
 
         var results =
             await productVectorCollection.VectorizedSearchAsync(queryEmbedding, vectorSearchOptions);
 
-        List<Product> products = [];
+        List<Product> products = new List<Product>();
         await foreach (var resultItem in results.Results)
         {
             products.Add(new Product
@@ -85,5 +89,5 @@ public class ProductAIService(
             await productVectorCollection.UpsertAsync(productVector);
         }
     }
-    */
+
 }
