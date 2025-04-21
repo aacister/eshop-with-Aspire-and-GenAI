@@ -7,6 +7,7 @@
 * RabbitMQ async messaging used to keep Basket microservice's Redis cache in sync on price update.
 * Endpoints secured with KeyCloak Authentication.
 * Ollama LLM with Microsoft-Extensions.AI utilized to create support page with chat, and search page with semantic search.
+* Microsoft.Extensions.AI utilized to create vector embeddings for products, and stored in memory.  Semantic Search used against vector store.
 * Semantic search utilizes in-memory vector db.
 * Utilizes Ollama models 'llama3.2' for chat and 'all-minilm' for semantic search.
 
